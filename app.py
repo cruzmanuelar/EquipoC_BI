@@ -7,7 +7,7 @@ from apps import home
 app = MultiApp()
 
 st.markdown("""
-#  Inteligencia de Negocios - Equipo A 
+#  Equipo C - Modelos 
 """)
 
 # Add all your application here
