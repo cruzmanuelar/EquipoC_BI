@@ -2,8 +2,7 @@ import streamlit as st
 from multiapp import MultiApp
 # from apps import home, model_random_forest, model_clustering, model_svm, model_regresion_logistica, model_lib_prophet # import your app modules here
 
-from apps import home, model_arima, model_random_forest # import your app modules here
-
+from apps import home, model_arima, model_random_forest
 app = MultiApp()
 
 st.markdown("""
