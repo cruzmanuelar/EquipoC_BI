@@ -19,7 +19,7 @@ def app():
 
     
     scaler = MinMaxScaler(feature_range=(0, 1))
-
+    st.title('Modelo - Arima')
     ticker='MSFT'
     period1 = int(time.mktime(datetime.datetime(2015, 1, 1, 0, 0).timetuple()))
     period2 = int(time.mktime(datetime.datetime.now().timetuple()))
