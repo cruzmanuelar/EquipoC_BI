@@ -4,8 +4,6 @@ from multiapp import MultiApp
 
 from apps import home, model_arima # import your app modules here
 
-from apps import home
-
 app = MultiApp()
 
 st.markdown("""
