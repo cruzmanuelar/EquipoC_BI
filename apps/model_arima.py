@@ -46,6 +46,8 @@ def app():
     st.title('Calculamos el RMSE')
     rms=np.sqrt(np.mean(np.power((np.array(valid['Close'])-np.array(forecast['Prediction'])),2)))
 
+    fig = plt.figure(figsize=(12,6))
     plt.plot(train['Close'])
     plt.plot(valid['Close'])
     plt.plot(forecast['Prediction'])
+    st.pyplot(fig)
