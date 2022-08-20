@@ -1,13 +1,11 @@
-import time
-import datetime
-import pandas as pd
+from nbformat import write
 import numpy as np
-import math
-import matplotlib.pyplot as plt 
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.metrics import mean_absolute_error
+import pandas as pd
+import matplotlib.pyplot as plt
 import streamlit as st
+import yfinance as yf
+from sklearn.model_selection import train_test_split 
+from sklearn.preprocessing import StandardScaler 
 
 def app():
     st.title('Modelo - Random Forest')
