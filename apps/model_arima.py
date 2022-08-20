@@ -41,3 +41,10 @@ def app():
 
     forecast = model.predict(n_periods=351)
     forecast = pd.DataFrame(forecast,index = valid.index,columns=['Prediction'])
+
+    st.title('Calculamos el RMSE')
+    rms=np.sqrt(np.mean(np.power((np.array(valid['Close'])-np.array(forecast['Prediction'])),2)))
+
+    plt.plot(train['Close'])
+    plt.plot(valid['Close'])
+    plt.plot(forecast['Prediction'])
