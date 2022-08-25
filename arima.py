@@ -5,8 +5,8 @@ import yfinance as yf
 import matplotlib.pyplot as plt 
 
 st.title('Learning Data Science — Predict Stock Price with Support Vector Regression (SVR)')
-start = '2019-01-01'
-end = '2019-12-31'
+start = '2015-01-02'
+end = '2022-08-24'
 st.subheader('Preparación de la data')
 
 df_msft = yf.download('MSFT', start, end)
