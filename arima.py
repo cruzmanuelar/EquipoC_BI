@@ -32,4 +32,4 @@ for i in range(0, len(data)):
   nueva_data['Date'][i] = data['Date'][i]
   nueva_data['Close'][i] = data['Close'][i]
 
-st.write(data.head())
+st.write(nueva_data.head())
