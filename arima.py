@@ -4,6 +4,7 @@ from statsmodels.tsa.arima_model import ARIMA
 import yfinance as yf
 import matplotlib.pyplot as plt
 from pmdarima.arima import auto_arima
+import numpy as np
 
 st.title('Learning Data Science — Predict Stock Price with Support Vector Regression (SVR)')
 start = '2015-01-02'
@@ -55,3 +56,8 @@ model.fit(training)
 
 forecast = model.predict(n_periods=576)
 forecast = pd.DataFrame(forecast,index = valid.index,columns=['Prediction'])
+
+rms=np.sqrt(np.mean(np.power((np.array(valid['Close'])-np.array(forecast['Prediction'])),2)))
+st.write(rms)
+
+st.subheader('Preparación de la data')
