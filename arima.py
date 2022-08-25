@@ -20,3 +20,4 @@ st.write(df)
 
 plt.figure(figsize=(16,8))
 plt.plot(df['Close'], label='Precio de cierre MSFT')
+plt.show()
