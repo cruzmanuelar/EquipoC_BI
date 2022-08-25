@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 from statsmodels.tsa.arima_model import ARIMA
 import yfinance as yf
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
+from pmdarima.arima import auto_arima
 
 st.title('Learning Data Science — Predict Stock Price with Support Vector Regression (SVR)')
 start = '2015-01-02'
@@ -40,3 +41,17 @@ valid = nueva_data[1348:]
 st.write(nueva_data.shape)
 st.write(train.shape)
 st.write(valid.shape)
+
+data = df_msft.sort_index(ascending=True, axis=0)
+
+train = data[:1348]
+valid = data[1341:]
+
+training = train['Close']
+validation = valid['Close']
+
+model = auto_arima(training, start_p=1, start_q=1,max_p=3, suppress_warning=True, max_q=3, m=12, start_P=0, seasonal=True, d=1, D=1, trace= True, error_action='ignore')
+model.fit(training)
+
+forecast = model.predict(n_periods=576)
+forecast = pd.DataFrame(forecast,index = valid.index,columns=['Prediction'])
