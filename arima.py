@@ -22,3 +22,6 @@ fig = plt.figure(figsize=(16,8))
 plt.plot(df['Close'], label='Precio de cierre MSFT')
 # plt.show()
 st.pyplot(fig)
+
+data = df.sort_index(ascending=True, axis = 0)
+st.write(data)
