@@ -61,3 +61,23 @@ rms=np.sqrt(np.mean(np.power((np.array(valid['Close'])-np.array(forecast['Predic
 st.write(rms)
 
 st.subheader('Preparación de la data')
+
+#plot
+plt.plot(train['Close'])
+plt.plot(valid['Close'])
+plt.plot(forecast['Prediction'])
+
+fig1 = plt.figure(figsize=(16,8))
+plt.plot(train['Close'], label='Precio de cierre MSFT')
+# plt.show()
+st.pyplot(fig1)
+
+fig2 = plt.figure(figsize=(16,8))
+plt.plot(valid['Close'], label='Precio de cierre MSFT')
+# plt.show()
+st.pyplot(fig2)
+
+fig3 = plt.figure(figsize=(16,8))
+plt.plot(forecast['Close'], label='Precio de cierre MSFT')
+# plt.show()
+st.pyplot(fig3)
