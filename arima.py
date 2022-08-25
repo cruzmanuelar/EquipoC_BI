@@ -12,6 +12,7 @@ st.subheader('Preparación de la data')
 df_msft = yf.download('MSFT', start, end)
 df_msft = df_msft.reset_index()
 st.write(df_msft)
+st.write(df_msft.shape)
 
 df_msft['Date'] = pd.to_datetime(df_msft.Date, format='%Y-%m-%d')
 df_msft.index = df_msft['Date']
