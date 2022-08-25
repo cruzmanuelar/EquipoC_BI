@@ -18,7 +18,7 @@ df.index = df['Date']
 
 st.write(df)
 
-plt.figure(figsize=(16,8))
+fig = plt.figure(figsize=(16,8))
 plt.plot(df['Close'], label='Precio de cierre MSFT')
 # plt.show()
-st.pyplot(plt.show())
+st.pyplot(fig)
