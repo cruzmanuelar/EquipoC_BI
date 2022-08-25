@@ -1,10 +1,13 @@
 import streamlit as st
 import pandas as pd
 from statsmodels.tsa.arima_model import ARIMA
+import yfinance as yf
 
-st.write('Prueba')
+st.title('Learning Data Science — Predict Stock Price with Support Vector Regression (SVR)')
+start = '2019-01-01'
+end = '2019-12-31'
+st.subheader('Preparación de la data')
 
-bitcoin = pd.read_csv("bitcoin_price.csv",parse_dates=['Date'])
-bitcoin = bitcoin.set_index('Date')
-bitcoin.sort_index(inplace=True)
-bitcoin.head()
+df = yf.download('MSFT', start, end)
+df = df.reset_index()
+st.write(df)
