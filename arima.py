@@ -33,3 +33,9 @@ for i in range(0, len(data)):
   nueva_data['Close'][i] = data['Close'][i]
 
 st.write(nueva_data.head())
+
+train = nueva_data[:1348]
+valid = nueva_data[1348:]
+st.write(nueva_data.shape)
+st.write(train.shape)
+st.write(valid.shape)
