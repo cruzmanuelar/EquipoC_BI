@@ -23,6 +23,28 @@ df_amzn.index = df_amzn['Date']
 fig = plt.figure(figsize=(14,8))
 plt.plot(df_amzn['Close'], label='Precio de cierre AMZN')
 
+st.subheader('Visualización precio de cierre de amazon')
+st.pyplot(fig)
+
+
+data = df_amzn.sort_index(ascending=True, axis = 0)
+st.write(data)
+
+st.subheader('Últimos registros')
+
+st.write(data.iloc[1920:1927])
+
+st.subheader('Primeros registros de nuestra variable objetivo')
+st.write(data['Close'].head())
+
+train = data[:1343]
+valid = data[1343:]
+
+mod = ARIMA(data['Close'], order=(1,1,1))
+res = mod.fit()
+fig = res.plot_predict(start=train.shape[0],end=(train.shape[0]+valid.shape[0]+30), dynamic=False)
+fig.set_size_inches(15, 8)
+
 st.pyplot(fig)
 
 # df_msft = yf.download('MSFT', start, end)
