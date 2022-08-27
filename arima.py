@@ -23,6 +23,8 @@ df_amzn.index = df_amzn['Date']
 fig = plt.figure(figsize=(14,8))
 plt.plot(df_amzn['Close'], label='Precio de cierre AMZN')
 
+st.pyplot(fig)
+
 # df_msft = yf.download('MSFT', start, end)
 # df_msft = df_msft.reset_index()
 # st.write(df_msft)
