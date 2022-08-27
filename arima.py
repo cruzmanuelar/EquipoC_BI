@@ -1,12 +1,14 @@
 import streamlit as st
 import pandas as pd
-# from statsmodels.tsa.arima_model import ARIMA
-from statsmodels.tsa.arima.model import ARIMA
+from statsmodels.tsa.arima_model import ARIMA
+# from statsmodels.tsa.arima.model import ARIMA
 import yfinance as yf
 import matplotlib.pyplot as plt
 import numpy as np
 import time
 import datetime
+
+# import statsmodels.api as sm
 
 
 st.title('Modelo ARIMA')
@@ -43,12 +45,11 @@ valid = data[1343:]
 
 mod = ARIMA(data['Close'], order=(1,1,1))
 res = mod.fit()
-# fig = res.plot_predict(start=train.shape[0],end=(train.shape[0]+valid.shape[0]+30), dynamic=False)
+fig = res.plot_predict(start=train.shape[0],end=(train.shape[0]+valid.shape[0]+30), dynamic=False)
 
-st.pyplot(res)
+st.write(res)
 fig.set_size_inches(15, 8)
-
-st.pyplot(fig)
+# st.pyplot(res)
 
 # df_msft = yf.download('MSFT', start, end)
 # df_msft = df_msft.reset_index()
