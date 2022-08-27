@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-from statsmodels.tsa.arima_model import ARIMA
+# from statsmodels.tsa.arima_model import ARIMA
+from statsmodels.tsa.arima.model import ARIMA
 import yfinance as yf
 import matplotlib.pyplot as plt
 import numpy as np
