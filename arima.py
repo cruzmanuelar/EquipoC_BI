@@ -43,7 +43,9 @@ valid = data[1343:]
 
 mod = ARIMA(data['Close'], order=(1,1,1))
 res = mod.fit()
-fig = res.plot_predict(start=train.shape[0],end=(train.shape[0]+valid.shape[0]+30), dynamic=False)
+# fig = res.plot_predict(start=train.shape[0],end=(train.shape[0]+valid.shape[0]+30), dynamic=False)
+
+st.pyplot(res)
 fig.set_size_inches(15, 8)
 
 st.pyplot(fig)
